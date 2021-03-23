@@ -1,0 +1,10 @@
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\GetAPI.exe.config
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\GetAPI.exe
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\GetAPI.pdb
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csprojAssemblyReference.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.Form1.resources
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.Properties.Resources.resources
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csproj.GenerateResource.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.exe
+C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.pdb
