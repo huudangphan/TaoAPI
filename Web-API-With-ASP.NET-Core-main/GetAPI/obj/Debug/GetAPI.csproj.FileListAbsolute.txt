@@ -8,3 +8,16 @@ C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and I
 C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csproj.CoreCompileInputs.cache
 C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.exe
 C:\Users\Admin\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\Desktop\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.pdb
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\GetAPI.exe.config
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\GetAPI.exe
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\GetAPI.pdb
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csprojAssemblyReference.cache
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.Form1.resources
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.Properties.Resources.resources
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csproj.GenerateResource.cache
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csproj.CoreCompileInputs.cache
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.exe
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.pdb
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\Newtonsoft.Json.dll
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\Newtonsoft.Json.xml
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.csproj.CopyComplete

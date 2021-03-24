@@ -1124,11 +1124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Web-API-With-ASP.NET-Core-main\\Web-API-With-ASP.NET-Core-main\\BookAPI.csproj",
+      "projectUniqueName": "D:\\ThucTap\\TaoAPI\\Web-API-With-ASP.NET-Core-main\\Web-API-With-ASP.NET-Core-main\\BookAPI.csproj",
       "projectName": "BookAPI",
-      "projectPath": "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Web-API-With-ASP.NET-Core-main\\Web-API-With-ASP.NET-Core-main\\BookAPI.csproj",
+      "projectPath": "D:\\ThucTap\\TaoAPI\\Web-API-With-ASP.NET-Core-main\\Web-API-With-ASP.NET-Core-main\\BookAPI.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive - Ho Chi Minh City University of Foreign Languages and Information Technology - HUFLIT\\Desktop\\Web-API-With-ASP.NET-Core-main\\Web-API-With-ASP.NET-Core-main\\obj\\",
+      "outputPath": "D:\\ThucTap\\TaoAPI\\Web-API-With-ASP.NET-Core-main\\Web-API-With-ASP.NET-Core-main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

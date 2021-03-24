@@ -8,7 +8,7 @@ namespace BookAPI.Models
 {
     public class AccountContext:DbContext
     {
-        public AccountContext(DbContextOptions<BookContext> options)
+        public AccountContext(DbContextOptions<AccountContext> options)
            : base(options)
         {
             Database.EnsureCreated();

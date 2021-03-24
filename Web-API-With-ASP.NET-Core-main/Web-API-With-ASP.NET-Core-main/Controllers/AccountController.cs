@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BookAPI.Models;
+using BookAPI.Repositories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BookAPI.Models;
-using BookAPI.Repositories;
 
 namespace BookAPI.Controllers
 {
@@ -33,7 +33,30 @@ namespace BookAPI.Controllers
         public async Task<ActionResult<Account>> PostAccount([FromBody] Account acc)
         {
             var newAcc = await accountRepository.Create(acc);
-            return CreatedAtAction(nameof(GetAccount), new { id = newAcc.id }, newAcc);
+            return CreatedAtAction(nameof(GetAccount), new { id = newAcc.Id }, newAcc);
+        }
+        [HttpPut]
+        public async Task<ActionResult> PutAccount(int id, [FromBody] Account acc)
+        {
+            if (id != acc.Id)
+            {
+                return BadRequest();
+            }
+
+            await accountRepository.Update(acc);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var accToDelete = await accountRepository.Get(id);
+            if (accToDelete == null)
+                return NotFound();
+
+            await accountRepository.Delete(accToDelete.Id);
+            return NoContent();
         }
     }
 }
