@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace BookAPI.Models
 {
-    public class CongViecContext:DbContext
+    public class ScheduleContext : DbContext
     {
-        public CongViecContext(DbContextOptions<CongViecContext> options):
-            base(options)
+        public ScheduleContext(DbContextOptions<ScheduleContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
-        public DbSet<CongViec> CongViec { get; set; }
+        public DbSet<Schedule> Schedules {get;set;}
     }
 }

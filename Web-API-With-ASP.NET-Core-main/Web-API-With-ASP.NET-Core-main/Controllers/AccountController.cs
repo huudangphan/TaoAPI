@@ -2,10 +2,12 @@
 using BookAPI.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Services.DelegatedAuthorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Description;
 
 namespace BookAPI.Controllers
 {
@@ -27,6 +29,13 @@ namespace BookAPI.Controllers
         public async Task<ActionResult<Account>> GetAccount( int id)
         {
             return await accountRepository.Get(id);
+        }
+        [HttpGet]
+        [Route("api/Account/{username}/{password}")]
+        [ResponseType(typeof(Account))]
+        public async Task<ActionResult<Account>>Login(string username,string password)
+        {
+            return await accountRepository.Login(username,password);
         }
         [HttpPost]
         

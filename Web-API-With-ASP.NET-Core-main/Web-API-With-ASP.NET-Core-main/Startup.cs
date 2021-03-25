@@ -29,8 +29,8 @@ namespace BookAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICongViecRepository, CongViecRepository>();
-            services.AddDbContext<CongViecContext>(o => o.UseSqlite("Data source=congviec.db"));
+            services.AddScoped<IScheduleRepository, ScheduleRepository>();
+            services.AddDbContext<ScheduleContext>(o => o.UseSqlite("Data source=schedule.db"));
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddDbContext<AccountContext>(o => o.UseSqlite("Data source=account.db"));
          

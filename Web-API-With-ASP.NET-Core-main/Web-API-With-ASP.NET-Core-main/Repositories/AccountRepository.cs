@@ -45,5 +45,11 @@ namespace BookAPI.Repositories
             await _context.SaveChangesAsync();
 
         }
+        
+        public async Task<Account> Login(string username, string password)
+        {
+            
+            return await _context.Account.FindAsync(new object[] { username, password });
+        }
     }
 }

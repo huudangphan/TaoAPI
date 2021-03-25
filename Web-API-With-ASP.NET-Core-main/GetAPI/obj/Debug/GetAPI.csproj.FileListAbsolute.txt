@@ -40,3 +40,9 @@ D:\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Extens
 D:\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Formatting.dll
 D:\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Primitives.dll
 D:\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Formatting.xml
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Extensions.dll
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Formatting.dll
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Primitives.dll
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\bin\Debug\System.Net.Http.Formatting.xml
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.fLich.resources
+D:\ThucTap\TaoAPI\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.fLogin.resources
