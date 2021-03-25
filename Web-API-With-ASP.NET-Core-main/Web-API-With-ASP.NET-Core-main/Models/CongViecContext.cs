@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace BookAPI.Models
 {
-    public class BookContext : DbContext
+    public class CongViecContext:DbContext
     {
-        public BookContext(DbContextOptions<BookContext> options)
-            :base(options)
+        public CongViecContext(DbContextOptions<CongViecContext> options):
+            base(options)
         {
             Database.EnsureCreated();
         }
-        public DbSet<Book> Books { get; set; }
+        public DbSet<CongViec> CongViec { get; set; }
     }
 }

@@ -11,13 +11,7 @@ using Newtonsoft.Json;
 
 namespace GetAPI
 {
-    public enum httpVerb
-    {
-        GET,
-        POST,
-        PUT,
-        DELETE
-    }
+    
     public static class RestClient
     {
         private static readonly string baseURL= "https://localhost:44375/api/Account";
@@ -75,7 +69,7 @@ namespace GetAPI
                     }
                 }
             }
-            return string.Empty; /*input.ToString();*/
+            return string.Empty; 
         }
         public static async Task<String> Put(int id,string username, string password)
         {
