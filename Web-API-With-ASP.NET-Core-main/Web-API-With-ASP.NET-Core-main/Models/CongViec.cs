@@ -7,5 +7,10 @@ namespace BookAPI.Models
 {
     public class CongViec
     {
+        public int Id { get; set; }
+        public string user_id { get; set; }
+        public string Day { get; set; }
+        public string ThoiGian { get; set; }
+        public string viec { get; set; }
     }
 }
