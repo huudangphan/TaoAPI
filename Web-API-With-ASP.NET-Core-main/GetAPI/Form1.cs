@@ -23,8 +23,8 @@ namespace GetAPI
         private async Task button1_ClickAsync(object sender, EventArgs e)
         {
 
-            var resource=await RestClient.get();
-            txtReply.Text = resource;
+            //var resource=await RestClient.get();
+            //txtReply.Text = resource;
             
             
 
@@ -39,28 +39,28 @@ namespace GetAPI
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            var resource = await RestClient.get();
-            txtReply.Text = RestClient.makeJson(resource);
+            //var resource = await RestClient.get();
+            //txtReply.Text = RestClient.makeJson(resource);
         }
 
         private async void button1_Click_1(object sender, EventArgs e)
         {
-            string id = txtid.Text;
-            var resource = await RestClient.getid(id);
-            txtReply.Text = resource;
+            //string id = txtid.Text;
+            //var resource = await RestClient.getid(id);
+            //txtReply.Text = resource;
         }
 
         private async void btnpost_Click(object sender, EventArgs e)
         {
-            var response = await RestClient.Post(txtusername.Text, txtpassword.Text);
+            var response = await RestClient.PostLogin(txtusername.Text, txtpassword.Text);
             txtReply.Text = RestClient.makeJson(response);
 
         }
 
         private async void btnput_Click(object sender, EventArgs e)
         {
-            var response = await RestClient.Put(Int32.Parse(id.Text), txtusername.Text, txtpassword.Text);
-            txtReply.Text = response;
+            //var response = await RestClient.Put(Int32.Parse(id.Text), txtusername.Text, txtpassword.Text);
+            //txtReply.Text = response;
         }
 
         private async void button3_Click(object sender, EventArgs e)

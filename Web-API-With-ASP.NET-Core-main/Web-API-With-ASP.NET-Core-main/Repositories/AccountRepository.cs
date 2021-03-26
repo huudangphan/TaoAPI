@@ -39,6 +39,12 @@ namespace BookAPI.Repositories
             return await _context.Account.FindAsync(id);
         }
 
+        public  List<Account> Login(string username,string password)
+        {
+            return _context.Account.Where(x => x.Username == username && x.Password == password).ToList();
+
+        }
+
         public async Task Update(Account acc)
         {
             _context.Entry(acc).State = EntityState.Modified;

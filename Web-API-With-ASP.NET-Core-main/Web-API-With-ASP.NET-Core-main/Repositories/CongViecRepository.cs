@@ -24,22 +24,35 @@ namespace BookAPI.Repositories
 
         }
 
-        public async Task Delete(int id,int user_id,string day,string thoigian)
+        public async Task Delete(int user_id)
         {
-            var cvRemove = await _congViecContext.CongViec.FindAsync(id,user_id,day,thoigian);
+            var cvRemove = await _congViecContext.CongViec.FindAsync(user_id);
             _congViecContext.Remove(cvRemove);
             await _congViecContext.SaveChangesAsync();
 
         }
+
+        
 
         public async Task<IEnumerable<CongViec>> Get()
         {
             return await _congViecContext.CongViec.ToListAsync();
         }
 
-        public async Task<CongViec> Get(int id,int user_id,string day,string thoigian)
+        public List<CongViec> Get(int user_id)
         {
-            return await _congViecContext.CongViec.FindAsync(new object[] { id, user_id, day, thoigian });
+            
+            return _congViecContext.CongViec.Where(t=>t.user_id == user_id).ToList();
+            
+        }
+        public List<CongViec> Get(int user_id,string day,string time)
+        {
+            return _congViecContext.CongViec.Where(x => x.user_id == user_id && x.Day == day&&x.ThoiGian==time).ToList();
+        }
+
+        public List<CongViec> Get(int user_id, string day)
+        {
+            return _congViecContext.CongViec.Where(x => x.user_id == user_id && x.Day == day).ToList();
         }
 
         public async Task Update(CongViec cv)
@@ -48,5 +61,7 @@ namespace BookAPI.Repositories
             await _congViecContext.SaveChangesAsync();
 
         }
+
+       
     }
 }

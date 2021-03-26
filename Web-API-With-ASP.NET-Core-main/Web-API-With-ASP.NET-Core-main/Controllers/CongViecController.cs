@@ -24,10 +24,20 @@ namespace BookAPI.Controllers
         {
             return await _congViecRepository.Get();
         }
-        [HttpGet("{id}/{user_id}/{day}/{thoigian}")]
-        public async Task<ActionResult<CongViec>> GetCongViec(int id,int user_id,string day,string thoigian)
+        [HttpGet("{user_id}")]
+        public ActionResult<List<CongViec>> GetCongViec(int user_id)
         {
-            return await _congViecRepository.Get(id,user_id,day,thoigian);
+            return _congViecRepository.Get(user_id);
+        }
+        [HttpGet("{user_id}/{day}/{time}")]
+        public ActionResult<List<CongViec>> GetCongViec(int user_id,string day,string time)
+        {
+            return _congViecRepository.Get(user_id,day,time);
+        }
+        [HttpGet("{user_id}/{day}")]
+        public ActionResult<List<CongViec>> GetCongViec(int user_id, string day)
+        {
+            return _congViecRepository.Get(user_id, day);
         }
         [HttpPost]
         public async Task<ActionResult<CongViec>> PostCongViec([FromBody] CongViec cv)
@@ -49,13 +59,13 @@ namespace BookAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id,int user_id,string day,string thoigian)
+        public async Task<ActionResult> Delete(int id)
         {
-            var cvToDelete = await _congViecRepository.Get(id,user_id,day,thoigian);
+            var cvToDelete = GetCongViec(id);
             if (cvToDelete == null)
                 return NotFound();
 
-            await _congViecRepository.Delete(cvToDelete.Id,cvToDelete.user_id,cvToDelete.Day,cvToDelete.ThoiGian);
+            await _congViecRepository.Delete(id);
             return NoContent();
         }
     }

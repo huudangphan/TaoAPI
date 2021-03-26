@@ -12,5 +12,6 @@ namespace GetAPI
         public int user_id { get; set; }
         public string day { get; set; }
         public string thoigian { get; set; }
+        public string viec { get; set; }
     }
 }

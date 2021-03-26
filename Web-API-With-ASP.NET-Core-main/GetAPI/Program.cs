@@ -16,7 +16,7 @@ namespace GetAPI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fLich());
+            Application.Run(new fLogin());
         }
     }
 }

@@ -24,10 +24,18 @@ namespace BookAPI.Controllers
             return await accountRepository.Get();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount( int id)
+        public async Task<ActionResult<Account>> GetAccount(int id)
         {
             return await accountRepository.Get(id);
         }
+        //("{id}/{username}/{password}")
+        [HttpGet("{username}/{password}")]
+        public  ActionResult<List<Account>>Login(string username,string password)
+        {
+            return accountRepository.Login(username, password);
+            
+        }
+
         [HttpPost]
         
         public async Task<ActionResult<Account>> PostAccount([FromBody] Account acc)
