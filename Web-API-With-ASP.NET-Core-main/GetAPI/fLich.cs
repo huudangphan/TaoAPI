@@ -262,8 +262,8 @@ namespace GetAPI
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
-            int id = 2;
-            RestClient.Delete(id);
+            //int id = 2;
+            //RestClient.Delete(id);
         }
 
         private void richTextBox5_TextChanged(object sender, EventArgs e)

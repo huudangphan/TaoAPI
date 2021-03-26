@@ -31,7 +31,10 @@ namespace GetAPI
             
             if (RestClient.PostLogin(username, password) != null)
             {
-                
+                var x = RestClient.PostLogin(username, password);
+                string a= MessageBox.Show(RestClient.makeJson(x));
+                MessageBox.Show(a);
+
 
                 fLich f = new fLich();
                 f.Show();
