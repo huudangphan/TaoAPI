@@ -35,7 +35,8 @@ namespace GetAPI
             if ( response!= "[]")
             {            
 
-                fLich f = new fLich(s);
+                
+                TKB f = new TKB(s);
                 f.Show();
             }
             else

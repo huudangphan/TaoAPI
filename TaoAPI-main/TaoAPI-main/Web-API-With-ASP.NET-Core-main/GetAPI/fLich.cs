@@ -185,7 +185,7 @@ namespace GetAPI
         {
 
             ModelLich lich = new ModelLich();
-            string userID = sess.id;                   
+            string userID = sess.id;                  
           
             
             lich.user_id = userID;

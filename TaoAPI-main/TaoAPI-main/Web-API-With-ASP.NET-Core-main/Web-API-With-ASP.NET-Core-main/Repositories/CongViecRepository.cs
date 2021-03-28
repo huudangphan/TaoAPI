@@ -66,9 +66,9 @@ namespace BookAPI.Repositories
             return _congViecContext.CongViec.Where(x => x.user_id == user_id && x.Day == day).ToList();
         }
 
-        public async Task<CongViec> Get(int user_id)
+        public List<CongViec> Get(int user_id)
         {
-            return await _congViecContext.CongViec.FindAsync(user_id);
+            return _congViecContext.CongViec.Where(x => x.user_id == user_id).ToList();
         }
 
         public async Task Update(CongViec cv)

@@ -25,6 +25,10 @@ namespace BookAPI.Controllers
             return await _congViecRepository.Get();
         }
         [HttpGet("{user_id}")]
+        public  ActionResult<List<CongViec>>Get(int user_id)
+        {
+            return _congViecRepository.Get(user_id);
+        }
         
         [HttpGet("{user_id}/{day}/{time}")]
         public ActionResult<List<CongViec>> GetCongViec(int user_id,string day,string time)
