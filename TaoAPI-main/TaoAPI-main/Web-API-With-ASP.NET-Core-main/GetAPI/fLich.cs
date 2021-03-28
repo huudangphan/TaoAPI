@@ -28,10 +28,16 @@ namespace GetAPI
         BindingSource list6 = new BindingSource();
         BindingSource list7 = new BindingSource();
         BindingSource listcn = new BindingSource();
-        public fLich()
+        private Session sess;
+        Session Sess
+        {
+            get { return sess; }
+            set { sess = value; }
+        }
+        public fLich(Session s)
         {
             InitializeComponent();
-
+            this.sess = s;
             loadAllData();
         }
         public void loadAllData()
@@ -99,9 +105,8 @@ namespace GetAPI
             //var emp = response.Content.ReadAsAsync<IEnumerable<ModelLich>>().Result;
             //dataGridView1.DataSource = emp;
             #endregion
-            Session s = new Session();
-            string userid = s.id;
-            string baseUrl = "https://localhost:44375/api/CongViec/1" +"/2";
+            string id = sess.id;
+            string baseUrl = "https://localhost:44375/api/CongViec/"+id +"/2";
 
 
             // convert json to datagridview
@@ -120,7 +125,7 @@ namespace GetAPI
 
              using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("https://localhost:44375/api/CongViec/1" + "/3");
+                var json = wc.DownloadString("https://localhost:44375/api/CongViec/"+id + "/3");
                 var user = JsonConvert.DeserializeObject<List<ModelLich>>(json);
 
                 dtgv3.DataSource = user;
@@ -128,7 +133,7 @@ namespace GetAPI
             }
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("https://localhost:44375/api/CongViec/1" + "/4");
+                var json = wc.DownloadString("https://localhost:44375/api/CongViec/"+id + "/4");
                 var user = JsonConvert.DeserializeObject<List<ModelLich>>(json);
 
                 dtgv4.DataSource = user;
@@ -136,7 +141,7 @@ namespace GetAPI
             }
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("https://localhost:44375/api/CongViec/1" + "/5");
+                var json = wc.DownloadString("https://localhost:44375/api/CongViec/"+id + "/5");
                 var user = JsonConvert.DeserializeObject<List<ModelLich>>(json);
 
                 dtgv5.DataSource = user;
@@ -144,7 +149,7 @@ namespace GetAPI
             }
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("https://localhost:44375/api/CongViec/1" + "/6");
+                var json = wc.DownloadString("https://localhost:44375/api/CongViec/"+id + "/6");
                 var user = JsonConvert.DeserializeObject<List<ModelLich>>(json);
 
                 dtgv6.DataSource = user;
@@ -152,7 +157,7 @@ namespace GetAPI
             }
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("https://localhost:44375/api/CongViec/1" + "/7");
+                var json = wc.DownloadString("https://localhost:44375/api/CongViec/"+id + "/7");
                 var user = JsonConvert.DeserializeObject<List<ModelLich>>(json);
 
                 dtgv7.DataSource = user;
@@ -160,7 +165,7 @@ namespace GetAPI
             }
             using (WebClient wc = new WebClient())
             {
-                var json = wc.DownloadString("https://localhost:44375/api/CongViec/1" + "/cn");
+                var json = wc.DownloadString("https://localhost:44375/api/CongViec/"+id + "/cn");
                 var user = JsonConvert.DeserializeObject<List<ModelLich>>(json);
 
                 dtgvcn.DataSource = user;
@@ -174,70 +179,80 @@ namespace GetAPI
         {
 
         }
-        private void addlich()
+        
+        
+        public void Them(string day,string thoigian,string viec)
         {
-            string id = "0";
-            string userid = "1";
-            string day = "2";
-            string time = "22";
-            string job = "aaa";
+
+            ModelLich lich = new ModelLich();
+            string userID = sess.id;                   
+          
             
-            try
+            lich.user_id = userID;
+            lich.day = day;
+            lich.thoigian = thoigian;
+            lich.viec = viec;
+            
+            string postData = JsonConvert.SerializeObject(lich);
+
+            string strUrl = String.Format("https://localhost:44375/api/CongViec");
+            WebRequest request = WebRequest.Create(strUrl);
+            request.Method = "POST";
+            request.ContentType = "application/json";        
+                      
+           
+            using (var streamWriter=new StreamWriter(request.GetRequestStream()))
             {
+                streamWriter.Write(postData);
+                streamWriter.Flush();
+                streamWriter.Close();
+                var response = request.GetResponse();
+                using(var streamReader=new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
 
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://localhost:44375/api/CongViec/");
-                
-                request.Method = "POST";
-                
-                request.Credentials = CredentialCache.DefaultCredentials;
-                ((HttpWebRequest)request).UserAgent = "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)";
-
-
-                string postData = "{\"id\":" + id + ",\"user_id\":" + userid + ",\"thoiGian\":" + time + ",\"day\":" + day + ",\"time\":" + time + ",\"job\":" + job + "}";
-
-                byte[] byteArray = Encoding.UTF8.GetBytes(postData);
-
-                request.ContentType = "application/json; charset=utf-8";
-
-                
-                
-                request.ContentLength = byteArray.Length;
-
-                
-                Stream dataStream = request.GetRequestStream();
-               
-                dataStream.Write(byteArray, 0, byteArray.Length);
-                
-                dataStream.Close();
-                
-                WebResponse response = request.GetResponse();
-              
-                MessageBox.Show(((HttpWebResponse)response).StatusDescription);
-               
-                dataStream = response.GetResponseStream();
-                
-                StreamReader reader = new StreamReader(dataStream);
-               
-                string responseFromServer = reader.ReadToEnd();
-              
-                MessageBox.Show(responseFromServer);
-                
-                reader.Close();
-                dataStream.Close();
-                response.Close();
+                }
             }
+                
+        }
+       
+        public void Sua(string day,string thoigian,string viec)
+        {
+            string strUrl = String.Format("https://localhost:44375/api/Account/11");
+            WebRequest request = WebRequest.Create(strUrl);
+            request.Method = "PUT";
+            request.ContentType = "application/json";
+            ModelLich lich = new ModelLich();
+            string userID = sess.id;
 
-            catch (Exception ex)
+
+            lich.user_id = userID;
+            lich.day = day;
+            lich.thoigian = thoigian;
+            lich.viec = viec;
+
+            
+            string postData = JsonConvert.SerializeObject(lich);
+            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                MessageBox.Show("Wrong request ! " + ex.Message, "Error");
+                streamWriter.Write(postData);
+                streamWriter.Flush();
+                streamWriter.Close();
+                var response = request.GetResponse();
+                using (var streamReader = new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+
+                }
             }
         }
 
         private  void btnthem_Click(object sender, EventArgs e)
         {
-            
-            addlich();
 
+            
+
+            Them("2","4","abc");
 
 
         }
@@ -249,6 +264,11 @@ namespace GetAPI
         }
 
         private void richTextBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

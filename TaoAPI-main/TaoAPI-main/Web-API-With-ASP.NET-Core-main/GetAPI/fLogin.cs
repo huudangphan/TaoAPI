@@ -21,20 +21,21 @@ namespace GetAPI
         }
         public void login()
         {
-            
+            string id = txtid.Text;
             string username = txtusername.Text;
             string password = txtpassword.Text;
-            string id = txtid.Text;
             Session s = new Session();
-
-            s.id = id;
-            
-            if (RestClient.PostLogin(username, password) != null)
-            {
-               
+            s.id = txtid.Text;
+            s.username = username;
+            s.password = password;
+            string response = RestClient.PostLogin(username, password).ToString();
 
 
-                fLich f = new fLich();
+
+            if ( response!= "[]")
+            {            
+
+                fLich f = new fLich(s);
                 f.Show();
             }
             else
@@ -47,6 +48,7 @@ namespace GetAPI
 
         private void btndangnhap_Click(object sender, EventArgs e)
         {
+            
             login();
         }
     }

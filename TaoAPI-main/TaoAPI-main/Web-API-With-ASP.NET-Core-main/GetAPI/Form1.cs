@@ -52,7 +52,7 @@ namespace GetAPI
 
         private async void btnpost_Click(object sender, EventArgs e)
         {
-            var response = await RestClient.PostAccount(txtusername.Text, txtpassword.Text);
+            var response = await RestClient.PostLogin(txtusername.Text, txtpassword.Text);
             txtReply.Text = response.ToString();
 
         }

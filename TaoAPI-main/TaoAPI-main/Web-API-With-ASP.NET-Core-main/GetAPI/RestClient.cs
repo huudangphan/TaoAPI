@@ -72,32 +72,32 @@ namespace GetAPI
             }
             return string.Empty; 
         }
-        public static async Task<String> PostAccount(string username, string password)
-        {
-            var inputData = new Dictionary<string, string>
-                {
+        //public static async Task<String> PostAccount(string username, string password)
+        //{
+        //    var inputData = new Dictionary<string, string>
+        //        {
 
-                    {"username",username},
-                    {"password",password }
-                };
-            var input = new FormUrlEncodedContent(inputData);
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage res = new HttpResponseMessage();
-                res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                using ( res = await client.PostAsync("https://localhost:44375/api/Account", input))
-                {
-                   
-                    using (HttpContent content = res.Content)
-                    {
-                        string data = await content.ReadAsStringAsync();
-                        if (data != null)
-                            return data;
-                    }
-                }
-            }
-            return string.Empty;
-        }
+        //            {"username",username},
+        //            {"password",password }
+        //        };
+        //    var input = new FormUrlEncodedContent(inputData);
+        //    using (HttpClient client = new HttpClient())
+        //    {
+               
+               
+        //        using (HttpResponseMessage res = await client.PostAsync("https://localhost:44375/api/Account", input))
+        //        {
+        //            res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        //            using (HttpContent content = res.Content)
+        //            {
+        //                string data = await content.ReadAsStringAsync();
+        //                if (data != null)
+        //                    return data;
+        //            }
+        //        }
+        //    }
+        //    return string.Empty;
+        //}
         public static async Task<String> Post(string id, string userID, string thu, string thoigian, string viec)
         {
             var inputData = new Dictionary<string, string>
