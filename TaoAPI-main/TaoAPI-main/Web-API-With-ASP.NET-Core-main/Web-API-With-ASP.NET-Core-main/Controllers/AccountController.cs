@@ -28,11 +28,11 @@ namespace BookAPI.Controllers
         {
             return await accountRepository.Get(id);
         }
-        //("{id}/{username}/{password}")
-        [HttpGet("{username}/{password}")]
-        public  ActionResult<List<Account>>Login(string username,string password)
+
+        [HttpGet("{id}/{username}/{password}")]
+        public  ActionResult<List<Account>>Login(int id, string username,string password)
         {
-            return accountRepository.Login(username, password);
+            return accountRepository.Login(id, username, password);
             
         }
 

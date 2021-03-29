@@ -39,9 +39,9 @@ namespace BookAPI.Repositories
             return await _context.Account.FindAsync(id);
         }
 
-        public  List<Account> Login(string username,string password)
+        public  List<Account> Login(int id, string username,string password)
         {
-            return _context.Account.Where(x => x.Username == username && x.Password == password).ToList();
+            return _context.Account.Where(x => x.Username == username && x.Password == password&&x.Id==id).ToList();
 
         }
 

@@ -77,18 +77,19 @@ namespace GetAPI
             return string.Empty;
         }
         // Dang nhap 
-        public static async Task<String> PostLogin(string username,string password)
+        public static async Task<String> PostLogin(string username,string password,string id)
         {
             var inputData = new Dictionary<string, string>
                 {
-                    
+                    {"id",id },
                     {"username",username},
                     {"password",password }
+                    
                 };
             var input = new FormUrlEncodedContent(inputData);
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage res = await client.GetAsync(baseURL +"/"+username+"/"+password))
+                using (HttpResponseMessage res = await client.GetAsync(baseURL+"/"+id +"/"+username+"/"+password))
                 {
                     res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                     using (HttpContent content = res.Content)

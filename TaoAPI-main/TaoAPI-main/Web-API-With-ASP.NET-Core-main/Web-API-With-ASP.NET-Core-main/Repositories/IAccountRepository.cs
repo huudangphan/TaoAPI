@@ -13,6 +13,6 @@ namespace BookAPI.Repositories
         Task<Account> Create(Account acc);
         Task Update(Account acc);
         Task Delete(int id);
-        List<Account> Login(string username,string password);
+        List<Account> Login(int id, string username,string password);
     }
 }

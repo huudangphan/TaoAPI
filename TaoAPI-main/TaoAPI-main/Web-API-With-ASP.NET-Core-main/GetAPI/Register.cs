@@ -21,21 +21,16 @@ namespace GetAPI
         }
         public void Them(string id,string username,string password)
         {
-
             Session s = new Session();
             s.id = id;
             s.username = username;
             s.password = password;
-
-
             string postData = JsonConvert.SerializeObject(s);
 
             string strUrl = String.Format("https://localhost:44375/api/Account");
             WebRequest request = WebRequest.Create(strUrl);
             request.Method = "POST";
             request.ContentType = "application/json";
-
-
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
                 streamWriter.Write(postData);
@@ -48,16 +43,14 @@ namespace GetAPI
                     MessageBox.Show("Resgiter account success");
                 }
             }
-
         }
-
         private async void btnRegister_Click(object sender, EventArgs e)
         {
             string user = txtUser.Text;
             string pass = txtpass.Text;
             string pass2 = txtpass2.Text;
             string id = txtid.Text;
-            var check = await RestClient.PostLogin(user, pass);
+            var check = await RestClient.PostLogin(id, user, pass);
             var checkID = await RestClient.getid(id);
             if (pass!=pass2)
             {
@@ -83,8 +76,7 @@ namespace GetAPI
                     }
 
                 }
-            }
-            
+            }          
            
         }
 

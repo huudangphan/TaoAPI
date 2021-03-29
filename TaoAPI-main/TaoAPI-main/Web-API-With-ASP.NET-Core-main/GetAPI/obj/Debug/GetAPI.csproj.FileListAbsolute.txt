@@ -461,3 +461,4 @@ D:\TaoAPI\TaoAPI-main\TaoAPI-main\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debu
 D:\TaoAPI\TaoAPI-main\TaoAPI-main\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.exe
 D:\TaoAPI\TaoAPI-main\TaoAPI-main\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.pdb
 D:\TaoAPI\TaoAPI-main\TaoAPI-main\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.Register.resources
+D:\TaoAPI\TaoAPI-main\TaoAPI-main\Web-API-With-ASP.NET-Core-main\GetAPI\obj\Debug\GetAPI.Info.resources

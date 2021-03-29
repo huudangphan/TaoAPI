@@ -29,7 +29,6 @@ namespace GetAPI
             this.sess = sess;
             loadData();
             AddBinding();
-
         }
         public void AddBinding()
         {
@@ -48,16 +47,12 @@ namespace GetAPI
                 var json = wc.DownloadString(baseUrl);
                 var data = JsonConvert.DeserializeObject<List<ModelLich>>(json);
                 list.DataSource = data;
-                dtgvTKB.DataSource = data;
-                
+                dtgvTKB.DataSource = data;               
 
-            }
-            
-
+            }            
         }
         public void Them(string day, string thoigian, string viec, string id)
         {
-
             ModelLich lich = new ModelLich();
             string userID = sess.id;
             // User Id da dang nhap
@@ -65,16 +60,12 @@ namespace GetAPI
             lich.user_id = userID;
             lich.day = day;
             lich.thoigian = thoigian;
-            lich.viec = viec;
-            
+            lich.viec = viec;            
             string postData = JsonConvert.SerializeObject(lich);
-
             string strUrl = String.Format("https://localhost:44375/api/CongViec");
             WebRequest request = WebRequest.Create(strUrl);
             request.Method = "POST";
             request.ContentType = "application/json";
-
-
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
                 streamWriter.Write(postData);
@@ -84,12 +75,9 @@ namespace GetAPI
                 using (var streamReader = new StreamReader(response.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-
                 }
             }
-
         }
-
         public void Sua(string id, string day, string thoigian, string viec)
         {
             ModelLich lich = new ModelLich();
@@ -111,13 +99,10 @@ namespace GetAPI
                 var reponse = request.GetResponse();
                 using(var streamReader=new StreamReader(reponse.GetResponseStream()))
                 {
-                    var result = streamReader.ReadToEnd();
-                    
+                    var result = streamReader.ReadToEnd();                    
                 }
             }
-
         }
-
         private async void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
             int idVao = Int32.Parse(txtid.Text);
@@ -131,18 +116,13 @@ namespace GetAPI
             if (checkid != "[]")
             {
                 MessageBox.Show("Id already exist");
-
             }
             else
             {
                 Them(day, time, job, id);
                 MessageBox.Show("Add schedule success");
             }
-                
-
             loadData();
-            
-            
         }
 
         private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
@@ -158,8 +138,7 @@ namespace GetAPI
         public void Xoa(string id)
         {
             ModelLich lich = new ModelLich();
-            lich.id = id;
-            
+            lich.id = id;            
             string putData = JsonConvert.SerializeObject(lich);
             string strUrl = String.Format("https://localhost:44375/api/CongViec/"+id);
             WebRequest request = WebRequest.Create(strUrl);
@@ -191,14 +170,23 @@ namespace GetAPI
                
             else
                 MessageBox.Show("Schedule doesn't exist");
-
-
             loadData();
         }
 
         private void TKB_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Info f = new Info();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+
+
+            
         }
     }
 }

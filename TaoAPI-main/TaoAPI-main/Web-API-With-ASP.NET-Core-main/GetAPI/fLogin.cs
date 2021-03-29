@@ -28,32 +28,24 @@ namespace GetAPI
             s.id = txtid.Text;
             s.username = username;
             s.password = password;
-            var response = await RestClient.PostLogin(username, password);
-
-
-
+            var response = await RestClient.PostLogin(id, username, password);
             if ( response!= "[]")
             {
-
-
                 TKB f = new TKB(s);
-                f.Show();
-                //fLich l = new fLich(s);
-                //l.Show();
-              
+                this.Hide();
+                f.ShowDialog();
+                this.Show();            
+                              
             }
             else
             {
                 MessageBox.Show("username or password invalid");
             }
-
-
         }
 
         private void btndangnhap_Click(object sender, EventArgs e)
-        {
-            
-            login();
+        {            
+            login();           
         }
 
         private void btndangky_Click(object sender, EventArgs e)
