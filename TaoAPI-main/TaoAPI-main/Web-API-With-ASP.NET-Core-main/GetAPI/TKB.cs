@@ -179,12 +179,21 @@ namespace GetAPI
             string userid = sess.id;
             var check =await RestClient.getidTKB(userid, id);
             if (check != "[]")
+            {
                 Xoa(id);
+                MessageBox.Show("Delete success");
+            }    
+               
             else
                 MessageBox.Show("Schedule doesn't exist");
 
 
             loadData();
+        }
+
+        private void TKB_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
