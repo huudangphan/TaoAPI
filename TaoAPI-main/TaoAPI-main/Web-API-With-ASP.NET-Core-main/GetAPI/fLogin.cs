@@ -19,7 +19,7 @@ namespace GetAPI
         {
             InitializeComponent();
         }
-        public void login()
+        public async void login()
         {
             string id = txtid.Text;
             string username = txtusername.Text;
@@ -28,16 +28,19 @@ namespace GetAPI
             s.id = txtid.Text;
             s.username = username;
             s.password = password;
-            string response = RestClient.PostLogin(username, password).ToString();
+            var response = await RestClient.PostLogin(username, password);
 
 
 
             if ( response!= "[]")
-            {            
+            {
 
-                
+
                 TKB f = new TKB(s);
                 f.Show();
+                //fLich l = new fLich(s);
+                //l.Show();
+              
             }
             else
             {
@@ -51,6 +54,12 @@ namespace GetAPI
         {
             
             login();
+        }
+
+        private void btndangky_Click(object sender, EventArgs e)
+        {
+            Register r = new Register();
+            r.Show();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BookAPI.Repositories
         Task<CongViec> Create(CongViec cv);
         Task Update(CongViec cv);
         Task Delete(int id);
-        List<CongViec> Get(int user_id, string day,string time);
-        List<CongViec> Get(int user_id, string day);
+
+        List<CongViec> Get(int user_id,int id);
     }
 }

@@ -53,23 +53,24 @@ namespace BookAPI.Repositories
         //    return _congViecContext.CongViec.Where(x => x.user_id == user_id && x.Day == day).ToList();
         //}
         #endregion
+               
 
         
-
-        public List<CongViec> Get(int user_id, string day, string time)
-        {
-            return _congViecContext.CongViec.Where(x => x.user_id == user_id && x.Day == day && x.ThoiGian == time).ToList();
-        }
-
-        public List<CongViec> Get(int user_id, string day)
-        {
-            return _congViecContext.CongViec.Where(x => x.user_id == user_id && x.Day == day).ToList();
-        }
 
         public List<CongViec> Get(int user_id)
         {
             return _congViecContext.CongViec.Where(x => x.user_id == user_id).ToList();
         }
+
+        public List<CongViec> Get(int user_id, int id)
+        {
+            return _congViecContext.CongViec.Where(x => x.Id == id && x.user_id == user_id).ToList();
+        }
+
+        //public async Task<CongViec> GetCV(int id)
+        //{
+        //    return await _congViecContext.CongViec.FindAsync(id);
+        //}
 
         public async Task Update(CongViec cv)
         {

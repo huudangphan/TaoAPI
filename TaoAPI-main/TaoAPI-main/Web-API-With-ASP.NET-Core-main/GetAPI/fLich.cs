@@ -179,43 +179,43 @@ namespace GetAPI
         {
 
         }
-        
-        
-        public void Them(string day,string thoigian,string viec)
-        {
 
-            ModelLich lich = new ModelLich();
-            string userID = sess.id;                  
-          
-            
-            lich.user_id = userID;
-            lich.day = day;
-            lich.thoigian = thoigian;
-            lich.viec = viec;
-            
-            string postData = JsonConvert.SerializeObject(lich);
 
-            string strUrl = String.Format("https://localhost:44375/api/CongViec");
-            WebRequest request = WebRequest.Create(strUrl);
-            request.Method = "POST";
-            request.ContentType = "application/json";        
-                      
-           
-            using (var streamWriter=new StreamWriter(request.GetRequestStream()))
-            {
-                streamWriter.Write(postData);
-                streamWriter.Flush();
-                streamWriter.Close();
-                var response = request.GetResponse();
-                using(var streamReader=new StreamReader(response.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
+        //public void Them(string day, string thoigian, string viec,string id)
+        //{
 
-                }
-            }
-                
-        }
-       
+        //    ModelLich lich = new ModelLich();
+        //    string userID = sess.id;
+        //    lich.id = id;
+
+        //    lich.user_id = userID;
+        //    lich.day = day;
+        //    lich.thoigian = thoigian;
+        //    lich.viec = viec;
+
+        //    string postData = JsonConvert.SerializeObject(lich);
+
+        //    string strUrl = String.Format("https://localhost:44375/api/CongViec");
+        //    WebRequest request = WebRequest.Create(strUrl);
+        //    request.Method = "POST";
+        //    request.ContentType = "application/json";
+
+
+        //    using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+        //    {
+        //        streamWriter.Write(postData);
+        //        streamWriter.Flush();
+        //        streamWriter.Close();
+        //        var response = request.GetResponse();
+        //        using (var streamReader = new StreamReader(response.GetResponseStream()))
+        //        {
+        //            var result = streamReader.ReadToEnd();
+
+        //        }
+        //    }
+
+        //}
+
         public void Sua(string day,string thoigian,string viec)
         {
             string strUrl = String.Format("https://localhost:44375/api/Account/11");
@@ -250,9 +250,9 @@ namespace GetAPI
         private  void btnthem_Click(object sender, EventArgs e)
         {
 
-            
 
-            Them("2","4","abc");
+
+            //Them("2", "4", "aaaac","34");
 
 
         }

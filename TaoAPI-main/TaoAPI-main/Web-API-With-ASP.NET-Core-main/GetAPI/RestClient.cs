@@ -16,38 +16,63 @@ namespace GetAPI
     public static class RestClient
     {
         private static readonly string baseURL= "https://localhost:44375/api/Account";
-        //public static async Task<string> get()
-        //{
-        //    using(HttpClient client =new HttpClient())
-        //    {
-        //        using(HttpResponseMessage res=await  client.GetAsync(baseURL))
-        //        {
-        //            using(HttpContent content=res.Content)
-        //            {
-        //                string data =await content.ReadAsStringAsync();
-        //                if (data != null)
-        //                    return data;
-        //            }
-        //        }
-        //    }
-        //    return string.Empty;
-        //}
-        //public static async Task<string> getid(string id)
-        //{
-        //    using (HttpClient client = new HttpClient())
-        //    {
-        //        using (HttpResponseMessage res = await client.GetAsync(baseURL+"/"+ id))
-        //        {
-        //            using (HttpContent content = res.Content)
-        //            {
-        //                string data = await content.ReadAsStringAsync();
-        //                if (data != null)
-        //                    return data;
-        //            }
-        //        }
-        //    }
-        //    return string.Empty;
-        //}
+        public static async Task<string> get()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.GetAsync(baseURL))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                            return data;
+                    }
+                }
+            }
+            return string.Empty;
+        }
+        public static async Task<string> getid(string id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.GetAsync(baseURL + "/" + id))
+                {
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                            return data;
+                    }
+                }
+            }
+            return string.Empty;
+        }
+        public static async Task<string> getidTKB(string userid,string id)
+        {
+            var inputData = new Dictionary<string, string>
+                {
+
+                    {"user_id",userid},
+                    {"id",id }
+                };
+
+            var input = new FormUrlEncodedContent(inputData);
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage res = await client.GetAsync("https://localhost:44375/api/CongViec" + "/" + userid + "/" + id))
+                {
+                    res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                            return data;
+                    }
+                }
+            }
+            return string.Empty;
+        }
         public static async Task<String> PostLogin(string username,string password)
         {
             var inputData = new Dictionary<string, string>
@@ -98,77 +123,77 @@ namespace GetAPI
         //    }
         //    return string.Empty;
         //}
-        public static async Task<String> Post(string id, string userID, string thu, string thoigian, string viec)
-        {
-            var inputData = new Dictionary<string, string>
-                {
-                     {"id", "1" },
-                     { "user_id","1"},
-                     { "thoiGian","9 gio" },           
-                     {"day","2" },
-                     {"viec","thiet ke giao dien" }             
+        //public static async Task<String> Post(string id, string userID, string thu, string thoigian, string viec)
+        //{
+        //    var inputData = new Dictionary<string, string>
+        //        {
+        //             {"id", "1" },
+        //             { "user_id","1"},
+        //             { "thoiGian","9 gio" },           
+        //             {"day","2" },
+        //             {"viec","thiet ke giao dien" }             
 
-                };
-            var input = new FormUrlEncodedContent(inputData);
-            using (HttpClient client = new HttpClient())
-            {
+        //        };
+        //    var input = new FormUrlEncodedContent(inputData);
+        //    using (HttpClient client = new HttpClient())
+        //    {
                 
-                using (HttpResponseMessage res = await client.PostAsync("https://localhost:44375/api/CongViec",input))
+        //        using (HttpResponseMessage res = await client.PostAsync("https://localhost:44375/api/CongViec",input))
 
-                {
+        //        {
 
-                    res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                    using (HttpContent content = res.Content)
-                    {
-                        string data = await content.ReadAsStringAsync();
-                        if (data != null)
-                            return data;
-                    }
-                }
-            }
-            return string.Empty;
-        }
-        public static async Task<String> Put(int id, string username, string password)
-        {
-            var inputData = new Dictionary<string, string>
-                {
-                    { "id","0"},
-                    {"username",username},
-                    {"password",password }
-                };
-            var input = new FormUrlEncodedContent(inputData);
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage res = await client.PutAsync(baseURL + "/" + id, input))
-                {
+        //            res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        //            using (HttpContent content = res.Content)
+        //            {
+        //                string data = await content.ReadAsStringAsync();
+        //                if (data != null)
+        //                    return data;
+        //            }
+        //        }
+        //    }
+        //    return string.Empty;
+        //}
+        //public static async Task<String> Put(int id, string username, string password)
+        //{
+        //    var inputData = new Dictionary<string, string>
+        //        {
+        //            { "id","0"},
+        //            {"username",username},
+        //            {"password",password }
+        //        };
+        //    var input = new FormUrlEncodedContent(inputData);
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        using (HttpResponseMessage res = await client.PutAsync(baseURL + "/" + id, input))
+        //        {
 
-                    using (HttpContent content = res.Content)
-                    {
-                        string data = await content.ReadAsStringAsync();
-                        if (data != null)
-                            return data;
-                    }
-                }
-            }
-            return string.Empty; /*input.ToString();*/
-        }
-        public static async Task<string> Delete(int id)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage res = await client.DeleteAsync("https://localhost:44375/api/CongViec/" + id))
-                {
-                    using (HttpContent content = res.Content)
-                    {
-                        res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                        string data = await content.ReadAsStringAsync();
-                        if (data != null)
-                            return data;
-                    }
-                }
-            }
-            return string.Empty;
-        }
+        //            using (HttpContent content = res.Content)
+        //            {
+        //                string data = await content.ReadAsStringAsync();
+        //                if (data != null)
+        //                    return data;
+        //            }
+        //        }
+        //    }
+        //    return string.Empty; /*input.ToString();*/
+        //}
+        //public static async Task<string> Delete(int id)
+        //{
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        using (HttpResponseMessage res = await client.DeleteAsync("https://localhost:44375/api/CongViec/" + id))
+        //        {
+        //            using (HttpContent content = res.Content)
+        //            {
+        //                res.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+        //                string data = await content.ReadAsStringAsync();
+        //                if (data != null)
+        //                    return data;
+        //            }
+        //        }
+        //    }
+        //    return string.Empty;
+        //}
         public static string makeJson(string json)
         {
             JToken parseJson = JToken.Parse(json);

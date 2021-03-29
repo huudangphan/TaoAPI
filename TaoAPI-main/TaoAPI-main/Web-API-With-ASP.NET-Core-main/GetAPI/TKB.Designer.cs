@@ -52,6 +52,9 @@ namespace GetAPI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbDay = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTKB)).BeginInit();
             this.SuspendLayout();
@@ -67,11 +70,14 @@ namespace GetAPI
             this.barButtonItem3,
             this.barButtonItem4});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbon.MaxItemId = 8;
             this.ribbon.Name = "ribbon";
+            this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(874, 193);
+            this.ribbon.Size = new System.Drawing.Size(721, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -82,7 +88,7 @@ namespace GetAPI
             // 
             // barButtonItem2
             // 
-            this.barButtonItem2.Caption = "Thêm";
+            this.barButtonItem2.Caption = "Add";
             this.barButtonItem2.Id = 5;
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
@@ -91,7 +97,7 @@ namespace GetAPI
             // 
             // barButtonItem3
             // 
-            this.barButtonItem3.Caption = "Sửa";
+            this.barButtonItem3.Caption = "Edit";
             this.barButtonItem3.Id = 6;
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
@@ -100,7 +106,7 @@ namespace GetAPI
             // 
             // barButtonItem4
             // 
-            this.barButtonItem4.Caption = "Xóa";
+            this.barButtonItem4.Caption = "Remove";
             this.barButtonItem4.Id = 7;
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
@@ -133,10 +139,11 @@ namespace GetAPI
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 466);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 379);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(874, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(721, 24);
             // 
             // dtgvTKB
             // 
@@ -147,11 +154,12 @@ namespace GetAPI
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dtgvTKB.Location = new System.Drawing.Point(1, 190);
+            this.dtgvTKB.Location = new System.Drawing.Point(1, 154);
+            this.dtgvTKB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvTKB.Name = "dtgvTKB";
             this.dtgvTKB.RowHeadersWidth = 51;
             this.dtgvTKB.RowTemplate.Height = 24;
-            this.dtgvTKB.Size = new System.Drawing.Size(872, 275);
+            this.dtgvTKB.Size = new System.Drawing.Size(720, 238);
             this.dtgvTKB.TabIndex = 2;
             // 
             // Column1
@@ -160,7 +168,6 @@ namespace GetAPI
             this.Column1.HeaderText = "ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
             // 
             // Column2
             // 
@@ -168,12 +175,11 @@ namespace GetAPI
             this.Column2.HeaderText = "ID User";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "day";
-            this.Column3.HeaderText = "Thứ";
+            this.Column3.HeaderText = "Day";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
@@ -181,7 +187,7 @@ namespace GetAPI
             // Column4
             // 
             this.Column4.DataPropertyName = "thoigian";
-            this.Column4.HeaderText = "Giờ";
+            this.Column4.HeaderText = "Time";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.Width = 125;
@@ -189,73 +195,100 @@ namespace GetAPI
             // Column5
             // 
             this.Column5.DataPropertyName = "viec";
-            this.Column5.HeaderText = "Công việc";
+            this.Column5.HeaderText = "Job";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.Column5.Width = 250;
             // 
             // txtTime
             // 
-            this.txtTime.Location = new System.Drawing.Point(400, 121);
+            this.txtTime.Location = new System.Drawing.Point(343, 98);
+            this.txtTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(230, 23);
+            this.txtTime.Size = new System.Drawing.Size(198, 21);
             this.txtTime.TabIndex = 6;
             // 
             // txtJob
             // 
-            this.txtJob.Location = new System.Drawing.Point(400, 161);
+            this.txtJob.Location = new System.Drawing.Point(343, 131);
+            this.txtJob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtJob.Name = "txtJob";
-            this.txtJob.Size = new System.Drawing.Size(230, 23);
+            this.txtJob.Size = new System.Drawing.Size(198, 21);
             this.txtJob.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 83);
+            this.label1.Location = new System.Drawing.Point(396, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 17);
+            this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Thứ";
+            this.label1.Text = "date";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(284, 167);
+            this.label2.Location = new System.Drawing.Point(243, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(24, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Công việc";
+            this.label2.Text = "Job";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(284, 124);
+            this.label3.Location = new System.Drawing.Point(243, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Thời gian";
+            this.label3.Text = "Time";
             // 
             // cbDay
             // 
             this.cbDay.FormattingEnabled = true;
             this.cbDay.Items.AddRange(new object[] {
-            "Thứ 2",
-            "Thứ 3",
-            "Thứ 4",
-            "Thứ 5",
-            "Thứ 6",
-            "Thứ 7",
-            "Chủ nhật"});
-            this.cbDay.Location = new System.Drawing.Point(400, 83);
+            "Monday",
+            "Tuesday",
+            "Webday",
+            "Thursday",
+            "Friday",
+            "Satursday",
+            "Sunday"});
+            this.cbDay.Location = new System.Drawing.Point(437, 59);
+            this.cbDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbDay.Name = "cbDay";
-            this.cbDay.Size = new System.Drawing.Size(121, 24);
+            this.cbDay.Size = new System.Drawing.Size(104, 21);
             this.cbDay.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(243, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "id";
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(343, 59);
+            this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(47, 21);
+            this.txtid.TabIndex = 15;
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
             // 
             // TKB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 496);
+            this.ClientSize = new System.Drawing.Size(721, 403);
+            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cbDay);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -265,10 +298,12 @@ namespace GetAPI
             this.Controls.Add(this.dtgvTKB);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TKB";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "TKB";
+            this.Text = "Schedule";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTKB)).EndInit();
             this.ResumeLayout(false);
@@ -283,11 +318,6 @@ namespace GetAPI
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private System.Windows.Forms.DataGridView dtgvTKB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
@@ -300,5 +330,13 @@ namespace GetAPI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbDay;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
     }
 }
