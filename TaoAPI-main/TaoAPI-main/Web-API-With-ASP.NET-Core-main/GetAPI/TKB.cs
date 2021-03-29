@@ -29,6 +29,7 @@ namespace GetAPI
             this.sess = sess;
             loadData();
             AddBinding();
+
         }
         public void AddBinding()
         {
@@ -50,6 +51,7 @@ namespace GetAPI
                 
 
             }
+            
 
         }
         public void Them(string day, string thoigian, string viec, string id)
@@ -135,6 +137,7 @@ namespace GetAPI
                 
 
             loadData();
+            
             
         }
 
