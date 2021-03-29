@@ -74,6 +74,7 @@ namespace GetAPI
             this.txtpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.Location = new System.Drawing.Point(387, 208);
             this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(237, 26);
             this.txtpassword.TabIndex = 3;
             this.txtpassword.Text = "dang123";
@@ -105,6 +106,7 @@ namespace GetAPI
             this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtid.Location = new System.Drawing.Point(387, 300);
             this.txtid.Name = "txtid";
+            this.txtid.PasswordChar = '*';
             this.txtid.Size = new System.Drawing.Size(237, 26);
             this.txtid.TabIndex = 7;
             this.txtid.Text = "1";

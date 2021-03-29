@@ -144,7 +144,7 @@ namespace GetAPI
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 379);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 393);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -277,8 +277,8 @@ namespace GetAPI
             // txtid
             // 
             this.txtid.Location = new System.Drawing.Point(343, 59);
+            this.txtid.Multiline = true;
             this.txtid.Name = "txtid";
-            this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(47, 21);
             this.txtid.TabIndex = 15;
             // 
@@ -286,7 +286,7 @@ namespace GetAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 403);
+            this.ClientSize = new System.Drawing.Size(721, 417);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbDay);

@@ -33,6 +33,7 @@ namespace GetAPI
         }
         public void AddBinding()
         {
+            // binding data
             cbDay.DataBindings.Add(new Binding("Text", dtgvTKB.DataSource, "day"));
             txtTime.DataBindings.Add(new Binding("Text", dtgvTKB.DataSource, "thoigian"));
             txtJob.DataBindings.Add(new Binding("Text", dtgvTKB.DataSource, "viec"));
@@ -59,12 +60,13 @@ namespace GetAPI
 
             ModelLich lich = new ModelLich();
             string userID = sess.id;
+            // User Id da dang nhap
             lich.id = id;
             lich.user_id = userID;
             lich.day = day;
             lich.thoigian = thoigian;
             lich.viec = viec;
-
+            
             string postData = JsonConvert.SerializeObject(lich);
 
             string strUrl = String.Format("https://localhost:44375/api/CongViec");
@@ -118,12 +120,14 @@ namespace GetAPI
 
         private async void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-                        
-            string id = txtid.Text;
+            int idVao = Int32.Parse(txtid.Text);
+            int idTang = idVao + 1;
+            string id = idTang.ToString();
             string day = cbDay.Text;
             string time = txtTime.Text;
             string job = txtJob.Text;
             var checkid = await RestClient.getidTKB(sess.id, id);
+            // kiem tra id 
             if (checkid != "[]")
             {
                 MessageBox.Show("Id already exist");
@@ -182,7 +186,8 @@ namespace GetAPI
             {
                 Xoa(id);
                 MessageBox.Show("Delete success");
-            }    
+            }   
+            // Neu khong tim thay cong viec 
                
             else
                 MessageBox.Show("Schedule doesn't exist");

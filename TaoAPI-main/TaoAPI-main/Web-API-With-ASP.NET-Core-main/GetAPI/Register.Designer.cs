@@ -54,7 +54,7 @@ namespace GetAPI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 137);
+            this.label2.Location = new System.Drawing.Point(126, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace GetAPI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(126, 214);
+            this.label3.Location = new System.Drawing.Point(126, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(195, 25);
             this.label3.TabIndex = 2;
@@ -92,16 +92,18 @@ namespace GetAPI
             // txtpass
             // 
             this.txtpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.Location = new System.Drawing.Point(349, 142);
+            this.txtpass.Location = new System.Drawing.Point(349, 135);
             this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(261, 29);
             this.txtpass.TabIndex = 5;
             // 
             // txtpass2
             // 
             this.txtpass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass2.Location = new System.Drawing.Point(349, 214);
+            this.txtpass2.Location = new System.Drawing.Point(349, 207);
             this.txtpass2.Name = "txtpass2";
+            this.txtpass2.PasswordChar = '*';
             this.txtpass2.Size = new System.Drawing.Size(261, 29);
             this.txtpass2.TabIndex = 6;
             // 
@@ -109,7 +111,7 @@ namespace GetAPI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(126, 285);
+            this.label4.Location = new System.Drawing.Point(126, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 25);
             this.label4.TabIndex = 7;
@@ -118,8 +120,9 @@ namespace GetAPI
             // txtid
             // 
             this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(349, 285);
+            this.txtid.Location = new System.Drawing.Point(349, 278);
             this.txtid.Name = "txtid";
+            this.txtid.PasswordChar = '*';
             this.txtid.Size = new System.Drawing.Size(261, 29);
             this.txtid.TabIndex = 8;
             this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
